@@ -3,38 +3,49 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from 'react-router-dom';
+import './NavBar.css'
 function NavBar() {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar fixed='top' expand="lg" className="bg-body-tertiary">
           <Container>
-            <Navbar.Brand href="#home">Jet Care</Navbar.Brand>
+          <NavLink to="/" className='link'>
+            <img
+              alt=""
+              src="/images/Background.svg"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />
+            Jet Care
+          </NavLink>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="m-auto">
 
                 {/* 1 */}
               <NavDropdown title="Car Care" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Engine Cleaner</NavDropdown.Item>
+                  <NavLink  className='link' to="#action/3.1">Engine Cleaner</NavLink>
 
 
                   <NavDropdown.Divider />
 
-                  <NavDropdown.Item href="#action/3.2">
+                  <NavLink  className='link' to="#action/3.2">
                     tayer shine
-                  </NavDropdown.Item>
+                  </NavLink>
 
                   <NavDropdown.Divider />
 
-                  <NavDropdown.Item href="#action/3.3">dash board shiner</NavDropdown.Item>
+                  <NavLink  className='link' to="#action/3.3">dash board shiner</NavLink>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
+                  <NavLink  className='link' to="#action/3.4">
                     fabric cleaner
-                  </NavDropdown.Item>
+                  </NavLink>
                   <NavDropdown.Divider />
 
-                  <NavDropdown.Item href="#action/3.3">wax cleaner</NavDropdown.Item>
+                  <NavLink  className='link' to="#action/3.3">wax cleaner</NavLink>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.3">engine degreaser</NavDropdown.Item>
+                  <NavLink  className='link' to="#action/3.3">engine degreaser</NavLink>
                   
               </NavDropdown>
 
@@ -42,39 +53,39 @@ function NavBar() {
 
                 {/* 2 */}
                 <NavDropdown title="Stain Remover" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Ink Remover</NavDropdown.Item>
+                  <NavLink  className='link' to="#action/3.1">Ink Remover</NavLink>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.2">
+                  <NavLink  className='link' to="#action/3.2">
                     Rust Remover
-                  </NavDropdown.Item>
+                  </NavLink>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.3">Oil Remover</NavDropdown.Item>
+                  <NavLink  className='link' to="#action/3.3">Oil Remover</NavLink>
                   
               
                 </NavDropdown>
 
                 {/* 3 */}
                 <NavDropdown title="Air Freshner" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Paper air Freshner</NavDropdown.Item>
+                  <NavLink  className='link' to="#action/3.1">Paper air Freshner</NavLink>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.2">
+                  <NavLink  className='link' to="#action/3.2">
                    A.C air Freshner
-                  </NavDropdown.Item>
+                  </NavLink>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.3">Splash Air Freshner</NavDropdown.Item>
+                  <NavLink  className='link' to="#action/3.3">Splash Air Freshner</NavLink>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
+                  <NavLink  className='link' to="#action/3.4">
                     Anti tobacco
-                  </NavDropdown.Item>
+                  </NavLink>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
+                  <NavLink  className='link' to="#action/3.4">
                    Anti bactarial
-                  </NavDropdown.Item>
+                  </NavLink>
                 </NavDropdown>
 
 
                 <NavDropdown title="Metal Cleaner" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Rust Remover</NavDropdown.Item>
+                  <NavLink  className='link' to="#action/3.1">Rust Remover</NavLink>
                   
                   
                 </NavDropdown>
@@ -82,9 +93,12 @@ function NavBar() {
 
 
 
-                <Nav.Link href="#home">Tools</Nav.Link>
-                <Nav.Link href="#link">About Us</Nav.Link>
-                <Nav.Link href="#link">Contanct Us</Nav.Link>
+                <NavLink className='link' to="#home">Tools</NavLink>
+                
+                  <NavLink className='link' to='/about'>
+                  About Us</NavLink>
+              
+                <NavLink className='link' to="/contact">Contanct Us</NavLink>
                 
               </Nav>
             </Navbar.Collapse>
