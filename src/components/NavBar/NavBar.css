@@ -1,12 +1,15 @@
 .link {
   text-decoration: none;
-  padding: 10px;
+  padding: 0 10px;
   color: #fff;
-
+  display: block;
 }
 .bg-body-tertiary{
     background-color: #012c57 !important;
 }
 .nav-item a{
     color: #fff;
+}
+.active {
+  color: #fbca00;
 }
