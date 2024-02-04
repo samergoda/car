@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Category from "./components/Category/Category";
+import Product from "./components/Product/Product";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DataContext } from "./Context/DataContext";
@@ -20,6 +21,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
 
             <Route path="/:category" element={<Category />} />
+            <Route path="products/:product"  element={<Product />}
+            />
 
           </Routes>
         </BrowserRouter>

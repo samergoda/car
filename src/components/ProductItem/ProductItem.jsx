@@ -1,9 +1,15 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
-function ProductItem({item}) {
+function ProductItem({item,index,subcategory}) {
+
+    console.log(subcategory.link)
+    // console.log(subcategory.products[index])
   return (
- 
+    <Link to={`/products/cate=${subcategory.link}&id=${subcategory.products[index].id}`} className='text-decoration-none'>
+  
+
     <Card className='col-md-4'>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
@@ -15,7 +21,7 @@ function ProductItem({item}) {
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
- 
+    </Link>
   );
 }
 
