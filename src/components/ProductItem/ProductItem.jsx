@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 function ProductItem({item,index,subcategory}) {
 
-    console.log(subcategory.link)
+    // console.log(subcategory.link)
     // console.log(subcategory.products[index])
   return (
-    <Link to={`/products/cate=${subcategory.link}&id=${subcategory.products[index].id}`} className='text-decoration-none'>
+<Link to={`/${index}?cate=${subcategory.link}&id=${subcategory.products[index].id}`} className='text-decoration-none'>
+
+
   
 
     <Card className='col-md-4'>

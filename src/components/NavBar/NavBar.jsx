@@ -39,9 +39,10 @@ function NavBar() {
                   key={index}
                 >
                   {item.subcategories.map((sub,i) => (
-                    <NavLink className="link"   to={`/categories?cate=${sub.link}&ic=${index}&is=${i}`} key={i}>
-                      {sub.title}
-                    </NavLink>
+                   <NavLink to={`/categories?cate=${sub.link}&ic=${index}&is=${i}`} key={i} className='link text-decoration-none'>
+                   {sub.title}
+                 </NavLink>
+                 
                   ))}
                 </NavDropdown>
               ) : (

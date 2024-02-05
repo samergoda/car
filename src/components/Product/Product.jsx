@@ -1,42 +1,44 @@
-import React from 'react';
-import { useData } from '../../Context/DataContext';
-import { useSearchParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { useData } from "../../Context/DataContext";
 
 const Subcategory = () => {
-  const [searchParams]= useSearchParams()
-  const category = searchParams.get('cate')
-  const id = searchParams.get('id')
-
-console.log(category,id)
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get("cate");
+  const id = +searchParams.get("id");
   const categories = useData();
+  const [title, setTitle] = useState("");
+  // const [image, setImage] = useState('');
+  // const [desc, setDesc] = useState('');
+  // const [price, setPrice] = useState('');
 
-// console.log(categories)
+  useEffect(() => {
+    const setProduct = () => {
+      categories.forEach((item) => {
+        if (item.subcategories) {
+          item.subcategories.forEach((subcategory) => {
+            if (subcategory.link === category) {
+              const product = subcategory.products.find((p) => p.id === id);
+              if (product) {
+                setTitle(product.name);
+                // You can set other variables like img, desc, price here if needed
+              }
+            }
+          });
+        }
+      });
+    };
 
-  // categories.subcategories &&  categories.subcategories
-  // // Extract the category and subcategory slugs from the URL
-  // const { categorySlug, subcategorySlug } = match.params;
-  // const categories = useData()
-  // // Find the category based on the category slug
-  // const category = categories.find((cat) => cat.link === `/${categorySlug}`);
-
-  // if (!category) {
-  //   // Handle case when category is not found
-  //   return <div>Category not found</div>;
-  // }
-
-  // // Find the subcategory based on the subcategory slug
-  // const subcategory = category.subcategories.find((sub) => sub.link === `/${subcategorySlug}`);
-
-  // if (!subcategory) {
-  //   // Handle case when subcategory is not found
-  //   return <div>Subcategory not found</div>;
-  // }
+    setProduct();
+  }, [categories, category, id]);
 
   return (
-    <div>
-      <h2>tessttt</h2>
-      {/* <h2>{subcategory.title}</h2> */}
-  
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6">
+          <h2>{title}</h2>
+        </div>
+      </div>
     </div>
   );
 };

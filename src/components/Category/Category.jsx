@@ -3,16 +3,12 @@ import { useData } from '../../Context/DataContext';
 import ProductItem from '../ProductItem/ProductItem';
 
 const Category = () => {
-
-
-
-
-  const [searchParams]= useSearchParams()
- const category = searchParams.get('cate')
- const indexParent = searchParams.get('ic')
- const indexSub = searchParams.get('is')
-
+  const [searchParams] = useSearchParams();
+  const category = searchParams.get('cate');
+  const indexParent = searchParams.get('ic');
+  const indexSub = searchParams.get('is');
   const categories = useData();
+  console.log(categories)
 
   if (!categories) {
    

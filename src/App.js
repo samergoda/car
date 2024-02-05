@@ -17,12 +17,13 @@ function App() {
           <NavBar />
           <Routes>
             <Route index element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
 
-            <Route path="/:category" element={<Category />} />
-            <Route path="products/:product"  element={<Product />}
-            />
+            <Route path="/categories" element={<Category />} />
+
+
+            <Route path="/:index" element={<Product />} />
 
           </Routes>
         </BrowserRouter>
