@@ -1,3 +1,21 @@
-.glide__arrow {
+.glide__arrow,.glide__bullet--active {
     background-color: #012c57;
+}
+.glide__arrow--right {
+    right: -2em;
+}
+.glide__arrow--left {
+    left: -2em;
+}
+.glide__bullets{
+    bottom: -1em;
+    display: none;
+}
+@media only screen and (max-width: 1100px){
+    .glide__arrow{
+        display: none;
+    }
+    .glide__bullets{
+        display: block;
+    }
 }
