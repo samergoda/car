@@ -67,7 +67,7 @@ function Home() {
 
 
       {/* accordion */}
-      <h2 className='text-center'>FAQs</h2>
+      <h2 className='text-center mt-5'>FAQs</h2>
       <Accordion defaultActiveKey="0" flush className='mt-5'>
       <Accordion.Item eventKey="0">
         <Accordion.Header>Accordion Item #1</Accordion.Header>
