@@ -7,12 +7,12 @@ function ProductItem({item,index,subcategory}) {
     // console.log(subcategory.link)
     // console.log(subcategory.products[index])
   return (
-<Link to={`/${index}?cate=${subcategory.link}&id=${subcategory.products[index].id}`} className='text-decoration-none'>
+<Link to={`/${index}?cate=${subcategory.link}&id=${subcategory.products[index].id}`} className='text-decoration-none col-md-4'>
 
 
   
 
-    <Card className='col-md-4'>
+    <Card className=''>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
         <Card.Title>{item.name}</Card.Title>
