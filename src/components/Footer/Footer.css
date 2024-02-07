@@ -1,0 +1,21 @@
+footer .btn:hover {
+  background-color: #e3a800;
+}
+.text-uppercase {
+  color: #fff;
+}
+.text-uppercase:hover {
+  color: #e3a800;
+}
+.text-body {
+  color: #fff !important;
+}
+.text-body:hover {
+  color: #e3a800 !important;
+}
+@media only screen and (max-width: 575px) {
+.items {
+    text-align: center !important;
+}
+
+}

@@ -8,6 +8,7 @@ import Product from "./components/Product/Product";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DataContext } from "./Context/DataContext";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/:index" element={<Product />} />
 
           </Routes>
+          <Footer />
         </BrowserRouter>
       </DataContext>
     </>
